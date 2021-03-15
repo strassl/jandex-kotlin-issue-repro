@@ -1,0 +1,21 @@
+plugins {
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.30'
+}
+
+repositories {
+    jcenter()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_12.toString()
+    kotlinOptions.freeCompilerArgs += ["-Xemit-jvm-type-annotations"]
+}
+
+dependencies {
+    implementation group: 'org.jboss', name: 'jandex', version: '2.2.3.Final'
+}
+
+application {
+    mainClass = 'demo.App'
+}
